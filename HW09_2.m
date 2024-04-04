@@ -55,8 +55,24 @@
  %  38 - 'yBottle3'    }
  %  39 - yBottle4'
 
-for i = 15
-    grabcan([i])
+%Grab Red Cans
+ for i = [25 24 26]
+   grabcan([i])
+ end 
+
+ % Grab Yellow side can
+ for i = 28
+    grabsidecan([i])
+ end 
+
+%Grab green and yellow standing cans
+for i = [27 29]
+   grabcan([i])
 end 
 
-disp('Done')
+ %Grab Pouches
+ for i = [15 16 17]
+    grabpouch([i])
+ end 
+
+ disp('Done')

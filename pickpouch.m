@@ -1,4 +1,4 @@
-function grip_result = pick(strategy,mat_R_T_M)
+function grip_result = pickpouch(strategy,mat_R_T_M)
     %----------------------------------------------------------------------
     % pick 
     % Top-level function to executed a complete pick. 
@@ -19,7 +19,7 @@ function grip_result = pick(strategy,mat_R_T_M)
     ops("debug")               = 0;     % If set to true visualize traj before running  
     ops("toolFlag")            = 0;     % Include rigidly attached robotiq fingers
     ops("traj_steps")          = 1;     % Num of traj steps
-    ops("z_offset")            = 0.15;   % Vertical offset for top-down approach
+    ops("z_offset")            = 0.1;   % Vertical offset for top-down approach
     ops("traj_duration")       = 2;     % Traj duration (secs)   
 
     grip_result                = -1;           % Init to failure number  
@@ -45,7 +45,7 @@ function grip_result = pick(strategy,mat_R_T_M)
 
     %% 3. Pick if successfull (check structure of resultState). Otherwise...
     if ~traj_result
-        [grip_result,grip_state] = doGrip('pick'); 
+        [grip_result,grip_state] = doGripPouch('pick'); 
         grip_result = grip_result.ErrorCode;
     else
         error('ErrorID', int2str(grip_result));
