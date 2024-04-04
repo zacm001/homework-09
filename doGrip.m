@@ -15,7 +15,7 @@ function [res,state] = doGrip(type)
     grip_msg = rosmessage(grip_action_client);
 
     %% Set Grip Pos by default to pick / close gripper
-    gripPos = 0.230; 
+    gripPos = 0.23125 
 
     % Modify it if place (i.e. open)
     if strcmp(type,'place')

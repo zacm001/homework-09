@@ -1,4 +1,4 @@
-function grip_result = pick(strategy,mat_R_T_M, mat_R_T_G)
+function grip_result = pick(strategy,mat_R_T_M)
     %----------------------------------------------------------------------
     % pick 
     % Top-level function to executed a complete pick. 
